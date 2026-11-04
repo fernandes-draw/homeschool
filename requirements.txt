@@ -5,23 +5,16 @@
 #    pip-compile requirements.in
 #
 asgiref==3.13.0
-    # via django
-dj-database-url==3.1.2
-    # via django-heroku
-django==4.2.30
     # via
     #   -r requirements.in
-    #   dj-database-url
-    #   django-heroku
-django-heroku==0.3.1
+    #   django
+django==4.2.30
     # via -r requirements.in
 gunicorn==26.2.0
     # via -r requirements.in
-psycopg2==2.9.13
-    # via django-heroku
 psycopg2-binary==2.9.13
     # via -r requirements.in
 sqlparse==0.6.1
-    # via django
-whitenoise==6.12.0
-    # via django-heroku
+    # via
+    #   -r requirements.in
+    #   django
