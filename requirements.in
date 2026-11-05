@@ -3,3 +3,6 @@ gunicorn
 psycopg2-binary
 sqlparse
 asgiref
+dj-database-url
+whitenoise
+django-debug-toolbar
