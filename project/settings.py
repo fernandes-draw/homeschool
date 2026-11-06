@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'accounts',
+    'homeschool.users',
 ]
 
 MIDDLEWARE = [
@@ -133,7 +133,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "accounts.CustomUser"
+AUTH_USER_MODEL = 'users.User'
 
 # Configuração do Django Debug Toolbar para ambiente de desenvolvimento local
 INTERNAL_IPS = [
