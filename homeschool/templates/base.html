@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Homeschool{% endblock %}</title>
+    <!-- Tailwind CSS CDN (Estilo Matt Layman para início rápido) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 antialiased">
+    <header class="bg-white shadow">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl text-indigo-600">Homeschool</a>
+            <div>
+                {% if user.is_authenticated %}
+                    <form method="post" action="{% url 'account_logout' %}" class="inline">
+                        {% csrf_token %}
+                        <button type="submit" class="text-sm text-gray-700 hover:text-indigo-600">Sign Out</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="text-sm text-gray-700 hover:text-indigo-600 mr-4">Sign In</a>
+                    <a href="{% url 'account_signup' %}" class="text-sm bg-indigo-600 text-white px-3 py-2 rounded hover:bg-indigo-700">Sign Up</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -70,7 +70,7 @@ SITE_ID = 1
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'homeschool' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,8 +153,13 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-# Configurações atualizadas do django-allauth
+# Configurações modernas do django-allauth para o modelo customizado sem username
 ACCOUNT_LOGIN_METHODS = {'email'}
-ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+
+# Define explicitamente os campos do formulário de registo para ignorar o username
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*']
 
 LOGIN_REDIRECT_URL = '/'

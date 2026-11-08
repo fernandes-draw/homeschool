@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Homeschool{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto py-12">
+    <div class="bg-white shadow rounded-lg p-8 text-center">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Welcome to Homeschool</h1>
+        <p class="text-gray-600 mb-6">
+            A modular Django application built following clean architecture and best practices.
+        </p>
+
+        {% if user.is_authenticated %}
+            <div class="inline-block bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-indigo-700">
+                You are successfully logged in as <span class="font-semibold">{{ user.email }}</span>.
+            </div>
+        {% else %}
+            <div class="space-x-4">
+                <a href="{% url 'account_login' %}" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 font-medium">Sign In</a>
+                <a href="{% url 'account_signup' %}" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 font-medium">Sign Up</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
