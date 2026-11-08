@@ -6,3 +6,4 @@ asgiref
 dj-database-url
 whitenoise
 django-debug-toolbar
+django-allauth
